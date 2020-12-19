@@ -1,7 +1,26 @@
-<!DOCTYPE html>
-<html>
+<?php
+ session_start();
+ extract($_POST);
+ extract($_SESSION);
+ 
+require('includes/config.php'); 	
+	//echo $uid;
+	if(isset($submit))
+	{
+	$query="insert into shipping_details(name,address,postal_code,city,state,phone,f_id) values('$name','$address','$pc','$city','$state','$phone','$uid')";
+	
+	$res=mysqli_query($conn,$query) or die("Can't Execute Query...");
+	header("location:payment.php");
+	}
+
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title></title>
+		<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -12,7 +31,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
+.bg {
+  /* The image used */
+  background-image: url("bi/1.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">BooksDeal</a>
@@ -36,16 +73,15 @@
       <li class="nav-item">
         <a class="nav-link" href="login.php">Log in</a>
 		</li>
+		<li class="nav-item">
+        <a class="nav-link" href="register.php">Sign up</a>
+		</li>
 		 <li class="nav-item">
         <a class="nav-link" href="category.php">Category</a>
 		</li>
 		 <li class="nav-item">
         <a class="nav-link" href="viewcart.php">Cart</a>
-		</li>
-		 <li class="nav-item">
-        <a class="nav-link" href="bestsell.php">BestSellers</a>
-		</li>
-		
+	
 		
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,6 +107,7 @@
   </div>
 </nav>
 	<br><br>
+	
 
 	<div class="container">
 <div class="row">
@@ -84,14 +121,14 @@
 		  </ul>
 		  <div class="carousel-inner">
 			<div class="carousel-item active">
-			  <img src="images/big_pic.jpg" class="img-fluid" alt="Los Angeles" width="1100" height="300">
+			  <img src="bi/storm2.jpg" class="img-fluid" alt="Los Angeles" width="1100" height="300">
 			</div>
 			<div class="carousel-item">
-			  <img src="images/comp1.jpg" class="img-fluid" alt="Chicago" width="1100" height="300">
+			  <img src="bi/storm1.jpg" class="img-fluid" alt="Chicago" width="1100" height="300">
 			   
 			</div>
 			<div class="carousel-item">
-			  <img src="images/comp2.jpg" class="img-fluid" alt="New York" width="1100" height="300">
+			  <img src="bi/har.jpg" class="img-fluid" alt="New York" width="1100" height="300">
 				
 			</div>
 		  </div>
@@ -103,64 +140,37 @@
 		  </a>
 		</div>
 
+</div>	
+				
+			<!-- end header -->
+			<!------------------------------->
+			<font style="font-size:30px;margin-left:420px">Shipping Details</font>	
+			<div class="container">
+			<!-- freshdesignweb top bar -->
+            <div class="freshdesignweb-top">
+                <div class="clr"></div>
+				
+            </div><!--/ freshdesignweb top bar -->    
+		
+      <div  class="form">
+    		<form id="contactform" method="post"> 
+    			<p class="contact"><label for="name">Name</label></p> 
+    			<input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text"> 
+    			 
+    			<p class="contact"><label for="email">Address</label></p> 
+    			<textarea id="address" name="address" placeholder="Address" required="" cols="55" row="10"type="email"> </textarea>
+                
+                <p class="contact"><label for="username">Postal Code</label></p> 
+    			<input id="pc" name="pc" placeholder="201001" required="" tabindex="2" type="text"> 
+    			 
+                <p class="contact"><label for="city">City</label></p> 
+    			<input type="text" id="city" name="city" required="" placeholder="delhi"> 
+                <p class="contact"><label for="state">State</label></p> 
+    			<input type="text" id="state" name="state" required="" placeholder="delhi"> 
+            <p class="contact"><label for="phone">Mobile phone</label></p> 
+            <input id="phone" name="phone" placeholder="phone number" required="" type="text"> <br>
+            <input class="buttom" name="submit" id="submit" tabindex="5" value="Confirm & Proceed" type="submit"> 	 
+   </form> 
+</div>      
 </div>
-<table style="width:100%">
-<div class="col-sm-6 col-md-5 login-page-form-header">
-<main id="authentication-panel" class="panel panel-transparent">
-<div class="login-modal-wrapper">
-<div class="component-wrapper" id=component-loginform-login-form-/login>
-<div id="authentication-panel" class="login-form">
-<p><h3>Log in to BooksDeal</h3></p>
-<div class="panel-body">
-<div class="signin-buttons">
-<button class="btn btn-facebook btn-block " autofocus="left">
-<span class="fa fa-facebook-official fa-wp-neutral-5" aria-hidden="true" style="font-size:24px"></span>
-<main id="authentication-panel" class="panel panel-transparent">
-<div class="w-50 m-r">
-
-<li id="login">			
-<?php
-						require('includes/config.php');
-							if(isset($_SESSION['status']))
-							{
-								echo '<h2>Hello :  '.$_SESSION['unm'].'</h2>';
-							}
-							else
-							{
-								echo '<form action="validation.php" method="POST" class="needs-validation" novalidate>
-									<div class="form-group">
-									  <label for="uname"><h4>Username:</h4></label>
-									  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-									  <div class="valid-feedback">Valid.</div>
-									  <div class="invalid-feedback">Please fill out this field.</div>
-									</div>
-									<div class="form-group">
-									  <label for="pwd"><h4>Password:<h4></label>
-									  <input type="password" class="form-control" id="x" placeholder="Enter password" name="pswd" required>
-									  <div class="valid-feedback">Valid.</div>
-									  <div class="invalid-feedback">Please fill out this field.</div>
-									</div>
-									<div class="form-group form-check">
-									  <label class="form-check-label">
-										<input class="form-check-input" type="checkbox" name="remember"> remember me.
-										
-									  </label>
-									</div>
-									<button type="submit" class="btn btn-primary">Submit</button>
-								  </form>';
-							}
-?>
-</li>
-<footer class="signup-link"><span>Don&#x27;t have an account? <button><a href="register.php">Sign up</a></button></span></footer></div>
-
-</main>
-</div>
-</div>
-</table>
-</div>
-
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	</body>
-	</html>
+</body>

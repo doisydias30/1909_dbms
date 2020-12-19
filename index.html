@@ -1,131 +1,174 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Online Bookshop</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="default.css" rel="stylesheet" type="text/css" />
-<link href="registration/demo.css" rel="stylesheet" type="text/css" />
-<link href="registration/style.css" rel="stylesheet" type="text/css" />
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="js/bootstrap.min.js"></script></head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
 
 <body>
-			<!-- start header -->
-				<div id="header">
-					<div id="menu">
-						<ul>
-			<li class="current_page_item"><a href="index.php">Home</a></li>
-			<!--<li><a href="register.php">Register</a></li>-->
-			<li><a href="register.php">Register</a></li>			
-			
-			<li class="last"><a href="contact.php">Contact</a></li>
-			<li class="last"><a href="aboutus.php">About Us</a></li>
-			<li><a href="viewcart.php">View Cart</a></li>
-			
-</ul>					</div>
-				</div>
-				
-				<div id="logo-wrap">
-					<div id="logo">
-												</div>
-				</div>
-			<!-- end header -->
-			
-			<!-- start page -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">BooksLover</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-				<div id="page">
-					<!-- start content -->
-							<div id="content">
-								<div class="post">
-									<h1 class="title">Business</h1>
-									<div class="entry">
-										
-										<table border="4" width="100%" >
-											<br><br><br><br><br>
-											<tr><td valign="top" width="20%" align="center">
-														<a href="detail.php?id=35&cat=Business">
-														<img src="upload_image/busi7.jpg" width="80" height="100">
-														<br>A TEXTBOOK OF COST AND MANAGEMENT ACCOUNTING 8th ed.</a>
-													</td><td valign="top" width="20%" align="center">
-														<a href="detail.php?id=37&cat=Business">
-														<img src="upload_image/business.jpg" width="80" height="100">
-														<br>Investing for Beginners</a>
-													</td></tr>											
-										</table>
-										
-										
-										<br><br><br>
-										<center>
-										&nbsp;&nbsp;<a href="booklist.php?subcatid=6&subcatnm=Business&page=1">1</a>&nbsp;&nbsp;										</center>
-									</div>
-									
-								</div>
-								
-							</div>
-					<!-- end content -->
-					
-					<!-- start sidebar -->
-							<div id="sidebar">
-									<ul>
-			<li id="login">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav sl-auto">
+  <li class="nav-item">
+		 <a class="nav-link" href="about.php">About</a>
+		 </li>
+		 <li class="nav-item">
+		  <a class="nav-link" href="contact.php">Contact</a>
+		</li></ul>
+    <ul class="navbar-nav ml-auto">
+	
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php">Log in</a>
+		</li>
+		
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Languages
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">French</a>
+		   <a class="dropdown-item" href="#">Spanish</a>
+		    <a class="dropdown-item" href="#">Portuguese</a>
+			 <a class="dropdown-item" href="#">Italian</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+	<br><br>
+<section>
+<div class="container">
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-12">
+		<div id="demo" class="carousel slide" data-ride="carousel">
+		  <ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		  </ul>
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			  <img src="images/big_pic.jpg" class="img-fluid" alt="Los Angeles" width="1100" height="300">
+			</div>
+			<div class="carousel-item">
+			  <img src="images/comp1.jpg" class="img-fluid" alt="Chicago" width="1100" height="300">
+			   
+			</div>
+			<div class="carousel-item">
+			  <img src="images/comp2.jpg" class="img-fluid" alt="New York" width="1100" height="300">
 				
-						<form action="process_login.php" method="POST">
-										<h2>LogIn</h2>
-											<b>Username:</b>
-											<br><input type="text" name="usernm"><br>
-											<br>
-											
-											
-											<b>Password:</b>
-											<br><input type="password" name="pwd">
-											<input type="submit" id="x" value="Login" />
-										</form>			</li>
+			</div>
+		  </div>
+		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		 </a>
+		  <a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		  </a>
+		</div>
+	</div>	
+	<div class="col-lg-12 col-md-12 col-12 login-page-form-header">
+	<main id="authentication-panel" class="panel panel-transparent">
+		<form action="userinfo.php" method="post" class="needs-validation" novalidate>
+			<div class="form-group">
+			  <label for="uname">Username:</label>
+			  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+			  <div class="valid-feedback">Valid.</div>
+			  <div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Password:</label>
+			  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+			  <div class="valid-feedback">Valid.</div>
+			  <div class="invalid-feedback">Please fill out this field.</div>
+			</div>
+			<div class="form-group form-check">
+			  <label class="form-check-label">
+				<input class="form-check-input" type="checkbox" name="remember"> remember me.
+				
+			  </label>
+			</div>
+			<href=ho"button type="submit" class="btn btn-primary">Submit</button>
+		  </form>
 
-			<li id="search">
-				<h2>Search</h2>
-				<form method="GET" action="search_result.php">
-					<fieldset>
-					<input type="text" id="s" name="s" value="" />
-					<input type="submit" id="x" value="Search" />
-					</fieldset>
-				</form>
-			</li>
-			<li>
-				<h2>Categories</h2>
-				<ul>
-					
-					
-					<!--
-					<li><a href="#">Economics</a></li>
-					<li><a href="#">Fiction</a></li>
-					<li><a href="#">Forestry & WildLife</a></li>
-					<li><a href="#">Health & Physics</a></li>
-					<li><a href="#">Historical</a></li>
-					<li><a href="#">Social</a></li>
-					<li><a href="#">Sports & Physical Education</a></li>
-					<li><a href="#">Terrorism</a></li>
-					<li><a href="#">Tourism</a></li>
-					<li><a href="#">Tracking </a></li>
-					<li><a href="#">Yoga</a></li>
-					-->
-								<li><a href="subcat.php?cat=1&catnm=Architecture">Architecture</a></li><li><a href="subcat.php?cat=2&catnm=Art And Culture">Art And Culture</a></li><li><a href="subcat.php?cat=3&catnm=Forest">Forest</a></li><li><a href="subcat.php?cat=4&catnm=Sports">Sports</a></li><li><a href="subcat.php?cat=5&catnm=Astrology">Astrology</a></li><li><a href="subcat.php?cat=6&catnm=Business">Business</a></li><li><a href="subcat.php?cat=7&catnm=Economics">Economics</a></li><li><a href="subcat.php?cat=8&catnm=Low Books">Low Books</a></li><li><a href="subcat.php?cat=9&catnm=Tourism">Tourism</a></li><li><a href="subcat.php?cat=10&catnm=Yoga">Yoga</a></li><li><a href="subcat.php?cat=11&catnm=Religion">Religion</a></li><li><a href="subcat.php?cat=12&catnm=Management">Management</a></li><li><a href="subcat.php?cat=13&catnm=Terrorism">Terrorism</a></li><li><a href="subcat.php?cat=14&catnm=Tracking">Tracking</a></li><li><a href="subcat.php?cat=15&catnm=Fiction">Fiction</a></li><li><a href="subcat.php?cat=16&catnm=Comics">Comics</a></li><li><a href="subcat.php?cat=17&catnm=Computer">Computer</a></li><li><a href="subcat.php?cat=18&catnm=Cooking">Cooking</a></li><li><a href="subcat.php?cat=19&catnm=Science">Science</a></li><li><a href="subcat.php?cat=20&catnm=Compititive Exam">Compititive Exam</a></li><li><a href="subcat.php?cat=21&catnm=tess">tess</a></li>				</ul>
-			</li>
-			
-		</ul>							</div>
-					<!-- end sidebar -->
-					<div style="clear: both;">&nbsp;</div>
-				</div>
-			<!-- end page -->
-			
-				
-			<!-- start footer -->
-				<div id="footer">
-							<div id="footer-wrap">
-	<p id="legal">(c) 2010 OurSite. Design by <a href="http://www.phptpoint.com"> PHP-t-POINT</a>.</p>
-	</div>				</div>
-			<!-- end footer -->
-</body>
-</html>
+
+		<script>
+		// Disable form submissions if there are invalid fields
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+			// Get the forms we want to add validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function(form) {
+			  form.addEventListener('submit', function(event) {
+				if (form.checkValidity() === false) {
+				  event.preventDefault();
+				  event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+			  }, false);
+			});
+		  }, false);
+		})();
+		</script>
+
+	</div>	
+</div>
+	</div>
+</section>
+<section class="my-5"> 
+<div  class="py-5">
+<h1 class="text-center">About us</h1>
+	</div>
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-lg-6 col-md-6 col-12">
+	<img src="images/big_pic.jpg" class="img-fluid aboutimg">
+	</div>
+		<div class="col-lg-6 col-md-6 col-12">
+		<h3 class="display-4">BooksLover</h3>
+		<h5><p class="py-3">Our company is a comprehensive online bookstore for both books and other products of every point of knowledge. Our philosophy is based on information, communication and education, which we feel should be balanced out with a daily dose of knowledge, wisdom, understanding (overstanding, and innerstanding).
+		</p></h5>
+		<a href="index.php" class="btn btn-success">back to top</a>
+		<div>
+	</div>
+	</div>
+	
+</section>
+
+
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</body>
+	</html>
+	
+	

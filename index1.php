@@ -58,7 +58,7 @@ body, html {
         <a class="nav-link" href="register.php">Sign up</a>
 		</li>
 		 <li class="nav-item">
-        <a class="nav-link" href="category.php">Category</a>
+        <a class="nav-link" href="booklist.php">Category</a>
 		</li>
 		 <li class="nav-item">
         <a class="nav-link" href="viewcart.php">Cart</a>
@@ -77,20 +77,22 @@ body, html {
           <div class="dropdown-divider"></div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+				<form method="GET" action="search_result.php">
+					<fieldset>
+					<input type="text" id="s" name="s" value="" />
+					 <button class="btn btn-outline-success my-2 my-sm-0" id="x" value="Search" type="submit">Search</button>
+					</fieldset>
+				</form>
+	
   </div>
 </nav>
 	<br><br>
 	
-
+	
+	
 	<div class="container">
+	
 <div class="row">
 <div class="col-sm-6 col-md-7 center-text">
 
@@ -122,6 +124,8 @@ body, html {
 		</div>
 
 </div>
+
+
 <table style="width:100%">
 <div class="col-sm-6 col-md-5 login-page-form-header">
 <main id="authentication-panel" class="panel panel-transparent">
@@ -134,59 +138,48 @@ body, html {
 <button class="btn btn-facebook btn-block " autofocus="left">
 <span class="fa fa-facebook-official fa-wp-neutral-5" aria-hidden="true" style="font-size:24px"></span>
 <main id="authentication-panel" class="panel panel-transparent">
-		<form action="userinfo.php" method="post" class="needs-validation" novalidate>
-			<div class="form-group">
-			  <label for="uname"><h4>Username:</h4></label>
-			  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-			  <div class="valid-feedback">Valid.</div>
-			  <div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group">
-			  <label for="pwd">Password:</label>
-			  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-			  <div class="valid-feedback">Valid.</div>
-			  <div class="invalid-feedback">Please fill out this field.</div>
-			</div>
-			<div class="form-group form-check">
-			  <label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="remember"> remember me.
-				
-			  </label>
-			</div>
-			<a href="home.php" button type="submit" class="btn btn-primary">Submit</a></button>
-		  </form>
+<div class="w-50 m-r">
 
+<li id="login">			
+<?php
+						require('includes/config.php');
+							if(isset($_SESSION['status']))
+							{
+								echo '<h2>Hello :  '.$_SESSION['unm'].'</h2>';
+							}
+							else
+							{
+								echo '<form action="validation.php" method="POST" class="needs-validation" novalidate>
+									<div class="form-group">
+									  <label for="uname"><h4>Username:</h4></label>
+									  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+									  <div class="valid-feedback">Valid.</div>
+									  <div class="invalid-feedback">Please fill out this field.</div>
+									</div>
+									<div class="form-group">
+									  <label for="pwd"><h4>Password:<h4></label>
+									  <input type="password" class="form-control" id="x" placeholder="Enter password" name="pswd" required>
+									  <div class="valid-feedback">Valid.</div>
+									  <div class="invalid-feedback">Please fill out this field.</div>
+									</div>
+									<div class="form-group form-check">
+									  <label class="form-check-label">
+										<input class="form-check-input" type="checkbox" name="remember"> remember me.
+										
+									  </label>
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								  </form>';
+							}
+?>
+</li>
+<footer class="signup-link"><span>Don&#x27;t have an account? <button><a href="register.php">Sign up</a></button></span></footer></div>
 
-		<script>
-		// Disable form submissions if there are invalid fields
-		(function() {
-		  'use strict';
-		  window.addEventListener('load', function() {
-			// Get the forms we want to add validation styles to
-			var forms = document.getElementsByClassName('needs-validation');
-			// Loop over them and prevent submission
-			var validation = Array.prototype.filter.call(forms, function(form) {
-			  form.addEventListener('submit', function(event) {
-				if (form.checkValidity() === false) {
-				  event.preventDefault();
-				  event.stopPropagation();
-				}
-				form.classList.add('was-validated');
-			  }, false);
-			});
-		  }, false);
-		})();
-		</script>
-
-<div class="password-forgot">
-<a href="/forgot?nextUrl=https://www.wattpad.com/home">Forgot password?</a>
-</div></div>
-<footer class="signup-link"><span>Don&#x27;t have an account?  <button><a href="register.php">Sign up</a></button></span></footer></div></div>
-</div>
 </main>
 </div>
 </div>
 </table>
+</div>
 </div>
 <section class="my-5"> 
 <div  class="py-5">

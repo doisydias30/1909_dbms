@@ -113,7 +113,7 @@
 <button class="btn btn-facebook btn-block " autofocus="left">
 <span class="fa fa-facebook-official fa-wp-neutral-5" aria-hidden="true" style="font-size:24px"></span>
 <main id="authentication-panel" class="panel panel-transparent">
-		<form action="userinfo.php" method="post" class="needs-validation" novalidate>
+		<form action="userinfo.php" method="POST" class="needs-validation" novalidate>
 		<div class="form-group">
 			  <label for="fname"><h4>FullName:</h4></label>
 			  <input type="text" class="form-control" id="uname" placeholder="Enter username" name="fname" required>
@@ -132,12 +132,6 @@
 			  <div class="valid-feedback">Valid.</div>
 			  <div class="invalid-feedback">Please fill out this field.</div>
 			</div>
-			<div class="form-group">
-			  <label for="cpwd"><h4>Confirm Password:</h4></label>
-			  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-			  <div class="valid-feedback">Valid.</div>
-			  <div class="invalid-feedback">Please fill out this field.</div>
-			</div>
 			
 			<div class="form-group">
 			  <label for="email"><h4>Email id:</h4></label>
@@ -147,26 +141,22 @@
 			</div>
 			
 			
-			
-			 
-			
 			<div class="form-group">
 			 <label for="city"><h4>City:</h4></label>
+			 <select div class="form-control" data-toggle="dropdown" placeholder="City" name="city" required>City</div>
 			
-			 <div class="form-control" data-toggle="dropdown" placeholder="City" name="city" required>City</div>
-			<div class="dropdown-menu">
-			  <a class="dropdown-item" href="#">Margao</a>
-			  <a class="dropdown-item" href="#">Panjim</a>
-			  <a class="dropdown-item" href="#">Vasco</a>
+														
+															<option>Margao
+															<option>Quepem
+															<option>Vasco
+															<option>Panjim
+															
+															
+														
+													</select>
 			</div>
-			</div>
-			<div class="form-group form-check">
-			  <label class="form-check-label">
-				<input class="form-check-input" type="checkbox" name="remember"> remember me.
-				
-			  </label>
-			</div>
-			<href=ho"button type="submit" class="btn btn-primary">Submit</button>
+		
+			<button type="submit" class="btn btn-primary">Submit</button>
 		  </form>
 
 

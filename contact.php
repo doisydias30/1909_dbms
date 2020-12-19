@@ -1,6 +1,4 @@
-<?php session_start();
-require('includes/config.php');
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +13,25 @@ require('includes/config.php');
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet">
-</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("bi/1.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">BooksDeal</a>
@@ -36,22 +52,13 @@ require('includes/config.php');
       <li class="nav-item active">
         <a class="nav-link" href="index1.php">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Log in</a>
-		</li>
-		<li class="nav-item">
-        <a class="nav-link" href="register.php">Sign up</a>
-		</li>
+      
 		 <li class="nav-item">
         <a class="nav-link" href="category.php">Category</a>
 		</li>
 		 <li class="nav-item">
         <a class="nav-link" href="viewcart.php">Cart</a>
-		</li>
-		 <li class="nav-item">
-        <a class="nav-link" href="bestsell.php">BestSellers</a>
-		</li>
-		
+	
 		
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,79 +84,79 @@ require('includes/config.php');
   </div>
 </nav>
 	<br><br>
-<body>
-		
-							<h1 class="title">Viewcart</h1>
-							<div class="entry">
-						
-							<pre><?php
-							//	print_r($_SESSION);
-							?></pre>
-						
-							<form action="process_cart.php" method="POST">
-							<table width="100%" border="0">
-								<tr >
-									<Td> <b>No 
-									<td> <b>Category
-									<td> <b>Product
-									<td> <b>Qty
-									<td> <b>Rate
-									<td> <b>Price
-									<td> <b>Delete
-								</tr>
-								<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-							
-								<?php
-									$tot = 0;
-									$i = 1;
-									if(isset($_SESSION['cart']))
-									{
+	
 
-									foreach($_SESSION['cart'] as $id=>$x)
-									{	
-										echo '
-											<tr>
-											<Td> '.$i.'
-											<td> '.$x['cat'].'
-											<td> '.$x['nm'].'
-											<td> <input type="text" size="2" value="'.$x['qty'].'" name="'.$id.'">
-											<td> '.$x['rate'].'
-											<td> '.($x['qty']*$x['rate']).'
-											<td> <a href="process_cart.php?id='.$id.'">Delete</a>
-										</tr>
-										';
-										
-										$tot = $tot + ($x['qty']*$x['rate']);
-										$i++;
-									}
-									}
-								
-								?>
-							<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-								
-							<tr>
-							<td colspan="6" align="right">
-							<h4>Total:</h4>
-							
-							<
-							</td>
-							<td> <h4><?php echo $tot; ?> </h4></td>
-							</tr>
-							<tr><td colspan="7"><hr style="border:1px Solid #a1a1a1;"></tr>
-							
-							<Br>
-								</table>						
+	<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-7 center-text">
 
-								<br><br>
-							<center>
-							<input type="submit" value=" Re-Calculate " > 
-							<a href="checkout.php">CONFIRM & PROCEED<a/>
-							</center>
-							</form>
-							</div>
-							
-						
-						
-					
+	<div id="demo" class="carousel slide" data-ride="carousel">
+		  <ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		  </ul>
+		  <div class="carousel-inner">
+			<div class="carousel-item active">
+			  <img src="bi/storm2.jpg" class="img-fluid" alt="Los Angeles" width="1100" height="300">
+			</div>
+			<div class="carousel-item">
+			  <img src="bi/storm1.jpg" class="img-fluid" alt="Chicago" width="1100" height="300">
+			   
+			</div>
+			<div class="carousel-item">
+			  <img src="bi/har.jpg" class="img-fluid" alt="New York" width="1100" height="300">
+				
+			</div>
+		  </div>
+		  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		 </a>
+		  <a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		  </a>
+		</div>
+
+</div>
+<table style="width:100%">
+<div class="col-sm-6 col-md-5 login-page-form-header">
+<main id="authentication-panel" class="panel panel-transparent">
+<div class="login-modal-wrapper">
+					<div id="page">
+						<!-- start content -->
+							<div id="content">
+								<div class="post">
+									<h1 class="title">Contact us</h1>
+									
+									<div class="entry" >
+									
+										<form action="contact_valid.php" method="POST">
+												
+
+											<br>Name :<br>
+												<input type='text' name='con_nm' size=35>
+												<br><br><br>
+												
+												E-mail ID:<br>
+												<input type='text' name='con_email' size=35>
+												<br><br><br>
+												
+												Query:<br>
+												<textarea cols="40" rows="10" name='con_query' ></textarea>
+												<br><br><br>
+
+												<input  type='submit' name='btn' value='   OK   '  >
+
+												
+										</form>
+									
+									</div>
+									
+								</div>
+								
+							</div>	
+</div>			
+</div>
+</div>
 </body>
 </html>
